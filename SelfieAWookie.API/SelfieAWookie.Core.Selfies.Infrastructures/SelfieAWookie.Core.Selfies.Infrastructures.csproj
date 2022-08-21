@@ -35,4 +35,8 @@
     <ProjectReference Include="..\SelfieAWookie.Data\SelfieAWookie.Core.Selfies.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Application\DTO\" />
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SelfieAWookie.API.Application.DTO;
 using SelfieAWookie.Core.Selfies.Domain;
 using SelfieAWookie.Core.Selfies.Infrastructures.Data;
 
@@ -19,7 +20,7 @@ namespace SelfieAWookie.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var model = _SelfieRepository.GetAll().Select(item => new { Title = item.Titre, WookieId = item.Wookie.Id, NbSelfiesFromWookie = item.Wookie.Selfies.Count }).ToList();
+            var model = _SelfieRepository.GetAll().Select(item => new SelfieResumeDTO(){ Titre = item.Titre, NomWookie = item.Wookie.Prenom, NbSelfiesFromWookie = item.Wookie.Selfies.Count }).ToList();
             return this.StatusCode(StatusCodes.Status200OK, model);
         }
     }

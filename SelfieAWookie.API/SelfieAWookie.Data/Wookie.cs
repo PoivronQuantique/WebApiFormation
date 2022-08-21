@@ -11,6 +11,6 @@ namespace SelfieAWookie.Core.Selfies.Domain
     {
         public int Id { get; set; }
         public string Prenom { get; set; }
-        public List<Selfie> Selfies { get; set; }
+        public List<Selfie> Selfies { get; set; } = new List<Selfie>();
     }
 }
