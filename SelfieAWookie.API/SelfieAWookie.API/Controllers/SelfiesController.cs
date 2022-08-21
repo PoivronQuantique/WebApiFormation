@@ -11,7 +11,7 @@ namespace SelfieAWookie.API.Controllers
     public class SelfiesController : ControllerBase
     {
         private readonly Contexte _Contexte = null;
-        public SelfiesController(/*[FromServices]*/Contexte contexte)
+        public SelfiesController([FromServices]Contexte contexte)
         {
             _Contexte = contexte;
         }

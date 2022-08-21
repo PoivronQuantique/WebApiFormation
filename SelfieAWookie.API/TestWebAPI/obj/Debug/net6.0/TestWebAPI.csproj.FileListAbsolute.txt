@@ -1,6 +1,0 @@
-M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\TestWebAPI\bin\Debug\net6.0\CoverletSourceRootsMapping
-M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\TestWebAPI\obj\Debug\net6.0\TestWebAPI.csproj.AssemblyReference.cache
-M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\TestWebAPI\obj\Debug\net6.0\TestWebAPI.GeneratedMSBuildEditorConfig.editorconfig
-M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\TestWebAPI\obj\Debug\net6.0\TestWebAPI.AssemblyInfoInputs.cache
-M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\TestWebAPI\obj\Debug\net6.0\TestWebAPI.AssemblyInfo.cs
-M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\TestWebAPI\obj\Debug\net6.0\TestWebAPI.csproj.CoreCompileInputs.cache
