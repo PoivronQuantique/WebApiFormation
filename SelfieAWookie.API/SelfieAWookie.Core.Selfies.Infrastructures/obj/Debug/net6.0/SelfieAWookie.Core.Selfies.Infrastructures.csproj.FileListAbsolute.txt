@@ -15,3 +15,4 @@ M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Core.Selfies.Infra
 M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Core.Selfies.Infrastructures\obj\Debug\net6.0\SelfieAWookie.Core.Selfies.Infrastructures.pdb
 M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Core.Selfies.Infrastructures\obj\Debug\net6.0\SelfieAWookie.Core.Selfies.Infrastructures.genruntimeconfig.cache
 M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Core.Selfies.Infrastructures\obj\Debug\net6.0\ref\SelfieAWookie.Core.Selfies.Infrastructures.dll
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Core.Selfies.Infrastructures\bin\Debug\net6.0\appsettings.json

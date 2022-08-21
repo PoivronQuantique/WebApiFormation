@@ -15,7 +15,7 @@ namespace SelfieAWookie.Core.Selfies.Infrastructures.Data.TypeConfiguration
         {
             builder.ToTable("Selfie");
             builder.HasKey(x => x.Id);
-            builder.HasOne(x => x.WookieProprietaire)
+            builder.HasOne(x => x.Wookie)
                     .WithMany(x=>x.Selfies);
         }
     }
