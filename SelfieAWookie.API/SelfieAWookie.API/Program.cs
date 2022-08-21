@@ -1,6 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using SelfieAWookie.Core.Selfies.Infrastructures.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+string ConnectionString = builder.Configuration.GetConnectionString("defaultConnexion");
+builder.Services.AddDbContext<Contexte>(options => options.UseSqlServer(ConnectionString));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

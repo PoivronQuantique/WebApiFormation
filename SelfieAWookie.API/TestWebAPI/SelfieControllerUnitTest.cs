@@ -16,6 +16,7 @@ namespace TestWebAPI
 
             // ASSERT
             Assert.NotNull(result); 
+            Assert.
             Assert.True(result.Count() > 0);    
 
 

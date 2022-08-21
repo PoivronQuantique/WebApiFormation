@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{E7B6E752-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C20D904E-534C-46F4-8193-F762B3E5697B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfieAWookie.Core.Selfies.Infrastructures", "SelfieAWookie.Core.Selfies.Infrastructures\SelfieAWookie.Core.Selfies.Infrastructures.csproj", "{AC5E118A-418D-46D8-AE1F-82DF76641CC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{FAF0827B-B298-49C4-A04C-56EAEAAFBA13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAF0827B-B298-49C4-A04C-56EAEAAFBA13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAF0827B-B298-49C4-A04C-56EAEAAFBA13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC5E118A-418D-46D8-AE1F-82DF76641CC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5E118A-418D-46D8-AE1F-82DF76641CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5E118A-418D-46D8-AE1F-82DF76641CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5E118A-418D-46D8-AE1F-82DF76641CC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{304943AB-6006-497E-9DCB-EC2CE7281308} = {C20D904E-534C-46F4-8193-F762B3E5697B}
 		{FAF0827B-B298-49C4-A04C-56EAEAAFBA13} = {E7B6E752-AE9F-4E68-BD0C-8AF2B485706C}
+		{AC5E118A-418D-46D8-AE1F-82DF76641CC2} = {E7B6E752-AE9F-4E68-BD0C-8AF2B485706C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79BF58A1-D0E1-4624-97AD-4C1DA19DE342}
