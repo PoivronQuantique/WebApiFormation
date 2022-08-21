@@ -52,8 +52,8 @@ namespace TestWebAPI
             Assert.True(or.StatusCode == 200);
             Assert.NotNull(or.Value);
             Assert.IsType<List<SelfieResumeDTO>>(or.Value);
-            List<SelfieResumeDTO> liste = or.Value as List<SelfieResumeDTO>;
-            Assert.True(liste.Count == 2);
+            List<SelfieResumeDTO> liste = or?.Value as List<SelfieResumeDTO>;
+            Assert.True(liste?.Count == 2);
 
         }
     }

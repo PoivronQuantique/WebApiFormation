@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SelfieAWookie.Core.Selfies.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SelfieAWookie.Core.Selfies.Domain
 {
-    public interface ISelfieRepository
+    public interface ISelfieRepository : IRepository
     {
         public ICollection<Selfie> GetAll();
     }

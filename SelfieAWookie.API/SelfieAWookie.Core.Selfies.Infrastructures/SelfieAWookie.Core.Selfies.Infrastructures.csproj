@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SelfieAWookie.Data\SelfieAWookie.Core.Selfies.Domain.csproj" />
+    <ProjectReference Include="..\SelfiesAWookie.Core.Selfies.Framework\SelfieAWookie.Core.Selfies.Framework.csproj" />
   </ItemGroup>
 
   <ItemGroup>

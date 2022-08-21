@@ -5,15 +5,17 @@ VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelfieAWookie.API", "SelfieAWookie.API\SelfieAWookie.API.csproj", "{53FD100D-7E16-4DCB-A2D9-8D2A96F9820A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebAPI", "TestWebAPI\TestWebAPI.csproj", "{304943AB-6006-497E-9DCB-EC2CE7281308}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWebAPI", "TestWebAPI\TestWebAPI.csproj", "{304943AB-6006-497E-9DCB-EC2CE7281308}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfieAWookie.Core.Selfies.Domain", "SelfieAWookie.Data\SelfieAWookie.Core.Selfies.Domain.csproj", "{FAF0827B-B298-49C4-A04C-56EAEAAFBA13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelfieAWookie.Core.Selfies.Domain", "SelfieAWookie.Data\SelfieAWookie.Core.Selfies.Domain.csproj", "{FAF0827B-B298-49C4-A04C-56EAEAAFBA13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{E7B6E752-AE9F-4E68-BD0C-8AF2B485706C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C20D904E-534C-46F4-8193-F762B3E5697B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfieAWookie.Core.Selfies.Infrastructures", "SelfieAWookie.Core.Selfies.Infrastructures\SelfieAWookie.Core.Selfies.Infrastructures.csproj", "{AC5E118A-418D-46D8-AE1F-82DF76641CC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelfieAWookie.Core.Selfies.Infrastructures", "SelfieAWookie.Core.Selfies.Infrastructures\SelfieAWookie.Core.Selfies.Infrastructures.csproj", "{AC5E118A-418D-46D8-AE1F-82DF76641CC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfieAWookie.Core.Selfies.Framework", "SelfiesAWookie.Core.Selfies.Framework\SelfieAWookie.Core.Selfies.Framework.csproj", "{DB5C1838-97AF-430A-AA4D-9D273704ED5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{AC5E118A-418D-46D8-AE1F-82DF76641CC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC5E118A-418D-46D8-AE1F-82DF76641CC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC5E118A-418D-46D8-AE1F-82DF76641CC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB5C1838-97AF-430A-AA4D-9D273704ED5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB5C1838-97AF-430A-AA4D-9D273704ED5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB5C1838-97AF-430A-AA4D-9D273704ED5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB5C1838-97AF-430A-AA4D-9D273704ED5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 		{304943AB-6006-497E-9DCB-EC2CE7281308} = {C20D904E-534C-46F4-8193-F762B3E5697B}
 		{FAF0827B-B298-49C4-A04C-56EAEAAFBA13} = {E7B6E752-AE9F-4E68-BD0C-8AF2B485706C}
 		{AC5E118A-418D-46D8-AE1F-82DF76641CC2} = {E7B6E752-AE9F-4E68-BD0C-8AF2B485706C}
+		{DB5C1838-97AF-430A-AA4D-9D273704ED5D} = {E7B6E752-AE9F-4E68-BD0C-8AF2B485706C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {79BF58A1-D0E1-4624-97AD-4C1DA19DE342}
