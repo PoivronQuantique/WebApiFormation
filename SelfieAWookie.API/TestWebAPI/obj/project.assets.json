@@ -1892,6 +1892,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "SelfieAWookie.Core.Selfies.Domain": "1.0.0",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "compile": {
@@ -1903,6 +1904,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "SelfieAWookie.Core.Selfies.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/SelfieAWookie.Core.Selfies.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SelfieAWookie.Core.Selfies.Domain.dll": {}
+        }
       }
     }
   },
@@ -6329,6 +6340,11 @@
       "type": "project",
       "path": "../SelfieAWookie.API/SelfieAWookie.API.csproj",
       "msbuildProject": "../SelfieAWookie.API/SelfieAWookie.API.csproj"
+    },
+    "SelfieAWookie.Core.Selfies.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SelfieAWookie.Data/SelfieAWookie.Core.Selfies.Domain.csproj",
+      "msbuildProject": "../SelfieAWookie.Data/SelfieAWookie.Core.Selfies.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {

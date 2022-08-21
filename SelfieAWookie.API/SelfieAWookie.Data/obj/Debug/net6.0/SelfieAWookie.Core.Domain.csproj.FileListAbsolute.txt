@@ -1,0 +1,12 @@
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Data\bin\Debug\net6.0\SelfieAWookie.Core.Domain.deps.json
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Data\bin\Debug\net6.0\SelfieAWookie.Core.Domain.dll
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Data\bin\Debug\net6.0\SelfieAWookie.Core.Domain.pdb
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Data\obj\Debug\net6.0\SelfieAWookie.Core.Domain.csproj.AssemblyReference.cache
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Data\obj\Debug\net6.0\SelfieAWookie.Core.Domain.GeneratedMSBuildEditorConfig.editorconfig
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Data\obj\Debug\net6.0\SelfieAWookie.Core.Domain.AssemblyInfoInputs.cache
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Data\obj\Debug\net6.0\SelfieAWookie.Core.Domain.AssemblyInfo.cs
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Data\obj\Debug\net6.0\SelfieAWookie.Core.Domain.csproj.CoreCompileInputs.cache
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Data\obj\Debug\net6.0\SelfieAWookie.Core.Domain.dll
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Data\obj\Debug\net6.0\refint\SelfieAWookie.Core.Domain.dll
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Data\obj\Debug\net6.0\SelfieAWookie.Core.Domain.pdb
+M:\VS_PROJETS\WebApiFormation\SelfieAWookie.API\SelfieAWookie.Data\obj\Debug\net6.0\ref\SelfieAWookie.Core.Domain.dll

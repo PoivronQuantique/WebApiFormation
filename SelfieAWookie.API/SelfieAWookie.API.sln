@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelfieAWookie.API", "Selfie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebAPI", "TestWebAPI\TestWebAPI.csproj", "{304943AB-6006-497E-9DCB-EC2CE7281308}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfieAWookie.Data", "SelfieAWookie.Data\SelfieAWookie.Data.csproj", "{FAF0827B-B298-49C4-A04C-56EAEAAFBA13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfieAWookie.Core.Selfies.Domain", "SelfieAWookie.Data\SelfieAWookie.Core.Selfies.Domain.csproj", "{FAF0827B-B298-49C4-A04C-56EAEAAFBA13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{E7B6E752-AE9F-4E68-BD0C-8AF2B485706C}"
 EndProject

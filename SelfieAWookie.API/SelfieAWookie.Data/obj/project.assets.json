@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "M:\\VS_PROJETS\\WebApiFormation\\SelfieAWookie.API\\SelfieAWookie.Data\\SelfieAWookie.Data.csproj",
-      "projectName": "SelfieAWookie.Data",
-      "projectPath": "M:\\VS_PROJETS\\WebApiFormation\\SelfieAWookie.API\\SelfieAWookie.Data\\SelfieAWookie.Data.csproj",
+      "projectUniqueName": "M:\\VS_PROJETS\\WebApiFormation\\SelfieAWookie.API\\SelfieAWookie.Data\\SelfieAWookie.Core.Selfies.Domain.csproj",
+      "projectName": "SelfieAWookie.Core.Selfies.Domain",
+      "projectPath": "M:\\VS_PROJETS\\WebApiFormation\\SelfieAWookie.API\\SelfieAWookie.Data\\SelfieAWookie.Core.Selfies.Domain.csproj",
       "packagesPath": "C:\\Users\\Pierre\\.nuget\\packages\\",
       "outputPath": "M:\\VS_PROJETS\\WebApiFormation\\SelfieAWookie.API\\SelfieAWookie.Data\\obj\\",
       "projectStyle": "PackageReference",
