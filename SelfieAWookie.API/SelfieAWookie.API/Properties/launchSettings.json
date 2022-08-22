@@ -26,6 +26,15 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    "IIS Express Staging": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "Jwt__Key" : "MaPropreCleStagingQuiVaBien",
+        "ASPNETCORE_ENVIRONMENT": "Staging"
+      }
     }
   }
 }
