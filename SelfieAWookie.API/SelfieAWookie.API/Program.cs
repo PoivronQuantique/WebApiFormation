@@ -3,6 +3,7 @@ using SelfieAWookie.Core.Selfies.Domain;
 using SelfieAWookie.Core.Selfies.Infrastructures.Data;
 using SelfieAWookie.Core.Selfies.Infrastructures.Repositories;
 using SelfieAWookie.API.Extensions;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +11,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 string ConnectionString = builder.Configuration.GetConnectionString("defaultConnexion");
 builder.Services.AddDbContext<Contexte>(options => options.UseSqlServer(ConnectionString));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+{
+    options.SignIn.RequireConfirmedEmail = true;
+}).AddEntityFrameworkStores<Contexte>();
+
 builder.Services.AddInjections();
+
+builder.Services.AddCustomSecurity(builder.Configuration);
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -28,6 +38,10 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseAuthentication();
+
+app.UseCors(SecuriteMethodes.DEFAULT_POLICY);
 
 app.MapControllers();
 

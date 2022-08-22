@@ -1,14 +1,17 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SelfieAWookie.API.Application.DTO;
+using SelfieAWookie.API.Extensions;
 using SelfieAWookie.Core.Selfies.Domain;
-using SelfieAWookie.Core.Selfies.Infrastructures.Data;
 
 namespace SelfieAWookie.API.Controllers
 {
-    [Route("api/v1/[controller]")]
     [ApiController]
+    [Route("api/v1/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [EnableCors(SecuriteMethodes.DEFAULT_POLICY)]
     public class SelfiesController : ControllerBase
     {
         private readonly ISelfieRepository _SelfieRepository = null;
@@ -20,6 +23,7 @@ namespace SelfieAWookie.API.Controllers
         }
 
         [HttpGet]
+        [DisableCors]
         public IActionResult GetAll([FromQuery] int wookieId = 0)
         {
             var model = _SelfieRepository.GetAll(wookieId).Select(item => new SelfieResumeDTO() { Titre = item.Titre, NomWookie = item.Wookie.Prenom, NbSelfiesFromWookie = item.Wookie.Selfies.Count }).ToList();
@@ -27,6 +31,7 @@ namespace SelfieAWookie.API.Controllers
         }
 
         [HttpPost]
+        [EnableCors(SecuriteMethodes.DEFAULT_POLICY)]
         public IActionResult AddOne(SelfieDTO selfie)
         {
             IActionResult result = this.BadRequest();
@@ -35,6 +40,7 @@ namespace SelfieAWookie.API.Controllers
             {
                 Titre = selfie.Titre,
                 ImagePath = selfie.ImagePath,
+                Description = selfie.Description,
                 WookieId = selfie.IdWookie
             });
 
