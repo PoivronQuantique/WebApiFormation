@@ -1,4 +1,6 @@
-﻿namespace SelfieAWookie.Core.Selfies.Domain
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SelfieAWookie.Core.Selfies.Domain
 {
     public class Selfie
     {

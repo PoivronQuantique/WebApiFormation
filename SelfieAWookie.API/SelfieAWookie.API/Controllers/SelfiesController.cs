@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using SelfieAWookie.API.Application.Commands;
 using SelfieAWookie.API.Application.DTO;
+using SelfieAWookie.API.Application.Queries;
 using SelfieAWookie.API.Extensions;
 using SelfieAWookie.Core.Selfies.Domain;
 
@@ -16,77 +19,67 @@ namespace SelfieAWookie.API.Controllers
     {
         private readonly ISelfieRepository _SelfieRepository = null;
         private readonly IWebHostEnvironment _HostEnvironment = null;
-        public SelfiesController([FromServices] ISelfieRepository selfieRepository, [FromServices] IWebHostEnvironment HostEnvironment = null)
+        private readonly IMediator _Mediator;
+        public SelfiesController([FromServices] ISelfieRepository selfieRepository,[FromServices] IMediator mediator, [FromServices] IWebHostEnvironment HostEnvironment = null)
         {
             _SelfieRepository = selfieRepository;
             _HostEnvironment = HostEnvironment;
+            _Mediator = mediator;
         }
 
         [HttpGet]
         [DisableCors]
-        public IActionResult GetAll([FromQuery] int wookieId = 0)
-        {
-            var model = _SelfieRepository.GetAll(wookieId).Select(item => new SelfieResumeDTO() { Titre = item.Titre, NomWookie = item.Wookie.Prenom, NbSelfiesFromWookie = item.Wookie.Selfies.Count }).ToList();
-            return this.StatusCode(StatusCodes.Status200OK, model);
-        }
-
-        [HttpPost]
-        [EnableCors(SecuriteMethodes.DEFAULT_POLICY)]
-        public IActionResult AddOne(SelfieDTO selfie)
+        public async Task<IActionResult> GetAll([FromQuery] int wookieId = 0)
         {
             IActionResult result = this.BadRequest();
-
-            Selfie addSelfie = _SelfieRepository.AddOne(new Selfie()
-            {
-                Titre = selfie.Titre,
-                ImagePath = selfie.ImagePath,
-                Description = selfie.Description,
-                WookieId = selfie.IdWookie
-            });
-
-            _SelfieRepository.UnitOfWork.SaveChanges();
-
-            if(addSelfie != null)
-            {
-                selfie.Id = addSelfie.Id;
-                result =  this.StatusCode(StatusCodes.Status200OK, selfie);
-            }
+            var model = await  _Mediator.Send(new SelectAllSelfiesQuery() { WookieId = wookieId});
+            if(model != null)
+                result = this.StatusCode(StatusCodes.Status200OK, model);
 
             return result;
         }
 
-        //[Route("Photos")]
-        //[HttpPost]
-        //public async Task<IActionResult> AddPhoto()
-        //{
-        //    using (var stream = new StreamReader(this.Request.Body))
-        //    {
-        //        var content = await stream.ReadToEndAsync();
+        [HttpPost]
+        [EnableCors(SecuriteMethodes.DEFAULT_POLICY)]
+        public async Task<IActionResult> AddOne([FromBody] SelfieDTO selfie)
+        {
+            IActionResult result = this.BadRequest();
 
-        //    }
-        //    return this.Ok();
-        //}
+            var item = await _Mediator.Send(new AddSelfieCommand() { SelfieDTO = selfie });
+            if(item != null)
+                result = this.StatusCode(StatusCodes.Status200OK, item);
+
+            return result;
+        }
+
 
         [Route("Photos")]
         [HttpPost]
         public async Task<IActionResult> AddPhoto(IFormFile photoFile)
         {
-            string FilePath = Path.Combine(_HostEnvironment.ContentRootPath, "Images", "Selfies");
-            if(!Directory.Exists(FilePath))
-            {
-                Directory.CreateDirectory(FilePath);
-            }
-            FilePath = Path.Combine(FilePath, photoFile.FileName);
+            IActionResult result = this.BadRequest();
 
-            using (var stream = new FileStream(FilePath, FileMode.OpenOrCreate))
-            {
-                await photoFile.CopyToAsync(stream);
-            }
+            var item = await _Mediator.Send(new AddPhotoCommand() { photoFile = photoFile });
+            if (item != null)
+                result = this.StatusCode(StatusCodes.Status200OK, item);
 
-            _SelfieRepository.AddOnePhoto(FilePath);
-            _SelfieRepository.UnitOfWork.SaveChanges();
+            return result;
+            //string FilePath = Path.Combine(_HostEnvironment.ContentRootPath, "Images", "Selfies");
+            //if(!Directory.Exists(FilePath))
+            //{
+            //    Directory.CreateDirectory(FilePath);
+            //}
+            //FilePath = Path.Combine(FilePath, photoFile.FileName);
 
-            return this.Ok();
+            //using (var stream = new FileStream(FilePath, FileMode.OpenOrCreate))
+            //{
+            //    await photoFile.CopyToAsync(stream);
+            //}
+
+            //_SelfieRepository.AddOnePhoto(FilePath);
+            //_SelfieRepository.UnitOfWork.SaveChanges();
+
+            //return this.Ok();
         }
     }
 }

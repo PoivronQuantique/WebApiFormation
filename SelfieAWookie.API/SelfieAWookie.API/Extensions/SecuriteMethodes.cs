@@ -7,13 +7,15 @@ namespace SelfieAWookie.API.Extensions
     public static class SecuriteMethodes
     {
         public const string DEFAULT_POLICY = "DEFAULT_POLICY";
-        public static void AddCustomSecurity(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddCustomSecurity(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddCustomCors(configuration);
-            services.AddCustomAuthentication(configuration);
+            services.AddCustomCors(configuration)
+                    .AddCustomAuthentication(configuration);
+
+            return services;
 
         }
-        private static void AddCustomAuthentication(this IServiceCollection services, IConfiguration configuration)
+        private static IServiceCollection AddCustomAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
             OptionSecurite optionSecu = new OptionSecurite();
             configuration.GetSection("Jwt").Bind(optionSecu);
@@ -35,8 +37,9 @@ namespace SelfieAWookie.API.Extensions
                     IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(maCleSecurite))
                 };
             });
+            return services;
         }
-        private static void AddCustomCors(this IServiceCollection services, IConfiguration configuration)
+        private static IServiceCollection AddCustomCors(this IServiceCollection services, IConfiguration configuration)
         {
             OptionCors optionCors = new OptionCors();
             configuration.GetSection("Cors").Bind(optionCors);
@@ -53,6 +56,8 @@ namespace SelfieAWookie.API.Extensions
                             .AllowAnyMethod();
                 });
             });
+
+            return services;
         }
     }
 }

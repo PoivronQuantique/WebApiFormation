@@ -17,11 +17,9 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     options.SignIn.RequireConfirmedEmail = true;
 }).AddEntityFrameworkStores<Contexte>();
 
-builder.Services.AddInjections();
-
-builder.Services.AddCustomSecurity(builder.Configuration);
-
-builder.Services.AddCustomOptions(builder.Configuration);
+builder.Services.AddInjections()
+                .AddCustomSecurity(builder.Configuration)
+                .AddCustomOptions(builder.Configuration);
 
 builder.Logging.AddProvider(new CustomLoggerProvider());
 
