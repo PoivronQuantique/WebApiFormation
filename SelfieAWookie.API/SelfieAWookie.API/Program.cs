@@ -1,7 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using SelfieAWookie.Core.Selfies.Domain;
 using SelfieAWookie.Core.Selfies.Infrastructures.Data;
-using SelfieAWookie.Core.Selfies.Infrastructures.Repositories;
 using SelfieAWookie.API.Extensions;
 using Microsoft.AspNetCore.Identity;
 

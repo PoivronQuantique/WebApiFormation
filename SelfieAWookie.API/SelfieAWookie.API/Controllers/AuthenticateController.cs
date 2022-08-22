@@ -27,6 +27,10 @@ namespace SelfieAWookie.API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> Login([FromBody] AuthUserDTO utilisateurLogin)
         {
             IActionResult result = this.BadRequest();
@@ -44,6 +48,10 @@ namespace SelfieAWookie.API.Controllers
                         UserName = user.UserName,
                         Token = GenerateJwtToken(user)
                     });
+                }
+                else
+                {
+                    result = this.Unauthorized();
                 }
             }
 
