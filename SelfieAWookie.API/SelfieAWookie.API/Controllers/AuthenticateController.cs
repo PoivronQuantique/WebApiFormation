@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -18,12 +17,16 @@ namespace SelfieAWookie.API.Controllers
         private readonly UserManager<IdentityUser> _UserManager = null;
         private readonly IConfiguration _Configuration = null;
         private readonly OptionSecurite _OptionSecurite = null;
+        private readonly ILogger<AuthenticateController> _Log = null;
 
-        public AuthenticateController(UserManager<IdentityUser> userManager, IConfiguration configuration, IOptions<OptionSecurite> options)
+        public AuthenticateController(ILogger<AuthenticateController> log, UserManager<IdentityUser> userManager, IConfiguration configuration, IOptions<OptionSecurite> options)
         {
             _UserManager = userManager;
             _Configuration = configuration;
             _OptionSecurite = options.Value;
+            _Log = log;
+
+            _Log.LogWarning("Test log");
         }
 
         [HttpPost]

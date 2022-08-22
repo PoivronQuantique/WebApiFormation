@@ -2,11 +2,12 @@ using Microsoft.EntityFrameworkCore;
 using SelfieAWookie.Core.Selfies.Infrastructures.Data;
 using SelfieAWookie.API.Extensions;
 using Microsoft.AspNetCore.Identity;
+using SelfieAWookie.Core.Selfies.Infrastructures.Logs;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
+// Add services to the container.
 string ConnectionString = builder.Configuration.GetConnectionString("defaultConnexion");
 builder.Services.AddDbContext<Contexte>(options => options.UseSqlServer(ConnectionString));
 
@@ -21,6 +22,7 @@ builder.Services.AddCustomSecurity(builder.Configuration);
 
 builder.Services.AddCustomOptions(builder.Configuration);
 
+builder.Logging.AddProvider(new CustomLoggerProvider());
 
 
 builder.Services.AddControllers();
@@ -28,7 +30,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
