@@ -20,9 +20,27 @@ namespace SelfieAWookie.Core.Selfies.Infrastructures.Repositories
         }
 
 
-        public ICollection<Selfie> GetAll()
+        public ICollection<Selfie> GetAll(int WookieId)
         {
-            return _Contexte.Selfies.Include(s=>s.Wookie).ToList();
+            if(WookieId > 0)
+            {
+                return _Contexte.Selfies.Include(s=>s.Wookie).Where(s=>s.Wookie.Id == WookieId).ToList();
+            }
+            else
+            {
+                return _Contexte.Selfies.Include(s=>s.Wookie).ToList();
+            }
         }
+
+        public Selfie AddOne(Selfie newSelfie)
+        {
+            return _Contexte.Selfies.Add(newSelfie).Entity;
+        }
+
+        public Photo AddOnePhoto(string URL)
+        {
+            return _Contexte.Photos.Add(new Photo() { URL = URL }).Entity;
+        }
+
     }
 }

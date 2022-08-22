@@ -9,15 +9,12 @@ using System.Threading.Tasks;
 
 namespace SelfieAWookie.Core.Selfies.Infrastructures.Data.TypeConfiguration
 {
-    internal class SelfieEntityTypeConfiguration : IEntityTypeConfiguration<Selfie>
+    internal class PhotoEntityTypeConfiguration : IEntityTypeConfiguration<Photo>
     {
-        public void Configure(EntityTypeBuilder<Selfie> builder)
+        public void Configure(EntityTypeBuilder<Photo> builder)
         {
-            builder.ToTable("Selfie");
+            builder.ToTable("Photo");
             builder.HasKey(x => x.Id);
-            builder.HasOne(x => x.Wookie)
-                    .WithMany(x=>x.Selfies);
-            builder.HasOne(x => x.Photo).WithMany(x => x.Selfies);
         }
     }
 }

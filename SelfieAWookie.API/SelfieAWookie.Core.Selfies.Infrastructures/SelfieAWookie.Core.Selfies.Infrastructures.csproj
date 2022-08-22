@@ -36,8 +36,4 @@
     <ProjectReference Include="..\SelfiesAWookie.Core.Selfies.Framework\SelfieAWookie.Core.Selfies.Framework.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Application\DTO\" />
-  </ItemGroup>
-
 </Project>

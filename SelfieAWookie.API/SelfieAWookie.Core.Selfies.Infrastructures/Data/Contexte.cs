@@ -26,9 +26,11 @@ namespace SelfieAWookie.Core.Selfies.Infrastructures.Data
 
             modelBuilder.ApplyConfiguration(new SelfieEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new WookieEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new PhotoEntityTypeConfiguration());
         }
 
         public DbSet<Selfie> Selfies { get; set; }
         public DbSet<Wookie> Wookies { get; set; }
+        public DbSet<Photo> Photos { get; set; }
     }
 }

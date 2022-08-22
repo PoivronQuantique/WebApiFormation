@@ -6,9 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
-using SelfieAWookie.Core.Selfies.Infrastructures.Data;
 
-namespace SelfieAWookie.Core.Selfies.Infrastructures
+namespace SelfieAWookie.Core.Selfies.Infrastructures.Data
 {
     public class ContexteFactory : IDesignTimeDbContextFactory<Contexte>
     {
