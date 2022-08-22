@@ -3,6 +3,7 @@ using SelfieAWookie.Core.Selfies.Infrastructures.Data;
 using SelfieAWookie.API.Extensions;
 using Microsoft.AspNetCore.Identity;
 using SelfieAWookie.Core.Selfies.Infrastructures.Logs;
+using SelfieAWookie.API.MiddleWares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,7 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+app.UseMiddleware<LogRequestMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
